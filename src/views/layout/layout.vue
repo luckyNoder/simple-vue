@@ -9,7 +9,7 @@
         <Content class="content_wrapper">
           <Card shadow bordered class="content_pages">
             //
-            <!-- <router-view><router-view/> -->
+           <router-view/>
           </Card>
         </Content>
       </Layout>
