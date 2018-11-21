@@ -1,7 +1,11 @@
 <template>
   <div class="layout_warpper">
     <Layout class="layout_warpper_autho">
-      <Sider collapsible v-model="collapsible" hide-trigger breakpoint="sm"></Sider>
+      <Sider collapsible v-model="collapsible" hide-trigger breakpoint="sm">
+        <SideMenu :collapsible = "collapsible" :menuList = "menuList">
+          <div class="logoContent">JS 米饭</div>
+        </SideMenu>
+      </Sider>
       <Layout>
         <Header class="header_wrapper">
            <Icon :class="collType" @click.native="handleColl" type="md-menu" size="32"></Icon>
@@ -17,10 +21,38 @@
   </div>
 </template>
 <script>
+import SideMenu from '../../components/SideMenu'
 export default {
+  components:{
+    SideMenu
+  },
   data(){
     return{
-      collapsible:false
+      collapsible:false,
+      menuList:[
+        {
+          title:'Button',
+          name:'menu1',
+          icon:"logo-javascript"
+        },
+        {
+          title:'Icon',
+          name:'menu11',
+          icon:"logo-javascript"
+        },
+        {
+          title:'Java米饭',
+          name:'menu2',
+          icon:"ios-school",
+          children:[
+            {
+              title:'JavaScript',
+              name:'menu2_sub1',
+              icon:"ios-rainy"
+            }
+          ]
+        }
+      ]
     }
   },
   computed:{
@@ -40,27 +72,7 @@ export default {
 </script>
 
 <style lang="less">
-.layout_warpper,.layout_warpper_autho{
-  height: 100%;
-  .header_wrapper{
-    background: #fff;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .1);
-    padding: 0 15px;
-    .collIcon{
-      cursor: pointer;
-      transition: all .3s ease;
-      &.rotale{
-        transform:rotateZ(-90deg);
-        transition: all .3s ease;
-      }
-    }
-  }
-  .content_wrapper{
-    padding: 10px;
-    .content_pages{
-      min-height: calc(~"100vh - 84px")
-    }
-  }
-}
+@import url("./layout.less");
+
 </style>
 

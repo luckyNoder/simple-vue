@@ -1,0 +1,28 @@
+.layout_warpper,.layout_warpper_autho{
+    height: 100%;
+    .header_wrapper{
+      background: #fff;
+      box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .1);
+      padding: 0 15px;
+      .collIcon{
+        cursor: pointer;
+        transition: all .3s ease;
+        &.rotale{
+          transform:rotateZ(-90deg);
+          transition: all .3s ease;
+        }
+      }
+    }
+    .content_wrapper{
+      padding: 10px;
+      .content_pages{
+        min-height: calc(~"100vh - 84px")
+      }
+    }
+    .logoContent{
+        text-align: center;
+        line-height: 64px;
+        color: #fff;
+        font-size: 30px;
+    }
+  }

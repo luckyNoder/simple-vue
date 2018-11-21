@@ -14,7 +14,7 @@ export default new Router({
       component: Layout,
       children: [
         {
-          path: 'main',
+          path: '',
           component: Main
         }
       ]
